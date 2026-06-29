@@ -14,6 +14,7 @@ Execution documents for the 6-month hiring and organization plan are in:
 - [hiring-system/05_role_priority_matrix.md](hiring-system/05_role_priority_matrix.md)
 - [hiring-system/06_risk_register.md](hiring-system/06_risk_register.md)
 - [hiring-system/07_weekly_hiring_review_template.md](hiring-system/07_weekly_hiring_review_template.md)
+- [hiring-system/08_rust_architecture_and_role_tasks.md](hiring-system/08_rust_architecture_and_role_tasks.md)
 - [hiring-system/dashboards/hiring_dashboard_template.csv](hiring-system/dashboards/hiring_dashboard_template.csv)
 
 Templates:
@@ -29,3 +30,4 @@ Templates:
 3. Standardize interviews with [hiring-system/03_interview_system.md](hiring-system/03_interview_system.md).
 4. Track weekly progress with [hiring-system/dashboards/hiring_dashboard_template.csv](hiring-system/dashboards/hiring_dashboard_template.csv).
 5. Run weekly review using [hiring-system/07_weekly_hiring_review_template.md](hiring-system/07_weekly_hiring_review_template.md).
+6. Execute architecture ownership and per-role tasks from [hiring-system/08_rust_architecture_and_role_tasks.md](hiring-system/08_rust_architecture_and_role_tasks.md).
