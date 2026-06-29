@@ -5,30 +5,38 @@
 1. Install dependencies:
 
 ```bash
-npm install
+bun install
 ```
 
 2. Start docs site locally:
 
 ```bash
-npm run docs:dev
+bun run docs:dev
 ```
 
 3. Build static site:
 
 ```bash
-npm run docs:build
+bun run docs:build
 ```
 
 4. Preview production build:
 
 ```bash
-npm run docs:preview
+bun run docs:preview
 ```
 
 ## Suggested authoring workflow
 
-1. Start from a template in [templates](./templates/product-requirements-document.md).
-2. Open a pull request with doc changes.
-3. Request review from role owners.
-4. Merge to main to publish automatically through GitHub Actions.
+1. Start from a template in [PRD Template](./templates/product-requirements-document.md) or [API Contract Template](./engineering/api-contract-template.md).
+2. Fill metadata sections first (owner, status, target release).
+3. Open a pull request with doc changes.
+4. Request review from role owners and adjacent teams.
+5. Merge to main to publish automatically through GitHub Actions.
+
+## Recommended placeholders to use first
+
+- Product roadmap: [Roadmap Template](./product/roadmap-template.md)
+- Feature details: [Feature Spec Template](./templates/feature-spec-template.md)
+- Architecture decisions: [RFC Template](./rfc/0000-template.md) and [ADR Template](./adr/0000-template.md)
+- Operations readiness: [Incident Runbook Template](./operations/incident-runbook-template.md)

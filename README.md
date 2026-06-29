@@ -57,6 +57,15 @@ Rust monorepo structure is now initialized for parallel team contribution:
 
 The repository includes a VitePress documentation site powered by files in [docs](docs).
 
+Starter template pages:
+
+- Product roadmap: [docs/product/roadmap-template.md](docs/product/roadmap-template.md)
+- Release notes: [docs/product/release-notes-template.md](docs/product/release-notes-template.md)
+- PRD: [docs/templates/product-requirements-document.md](docs/templates/product-requirements-document.md)
+- Feature spec: [docs/templates/feature-spec-template.md](docs/templates/feature-spec-template.md)
+- API contract: [docs/engineering/api-contract-template.md](docs/engineering/api-contract-template.md)
+- Incident runbook: [docs/operations/incident-runbook-template.md](docs/operations/incident-runbook-template.md)
+
 Local docs commands:
 
 1. Install dependencies:
