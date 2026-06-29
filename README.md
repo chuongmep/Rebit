@@ -53,6 +53,27 @@ Rust monorepo structure is now initialized for parallel team contribution:
 5. Or run all checks:
    - `./scripts/bootstrap.sh`
 
+## Documentation Site (VitePress)
+
+The repository includes a VitePress documentation site powered by files in [docs](docs).
+
+Local docs commands:
+
+1. Install dependencies:
+   - `bun install`
+2. Start docs site:
+   - `bun run docs:dev`
+3. Build docs site:
+   - `bun run docs:build`
+4. Preview production docs build:
+   - `bun run docs:preview`
+
+Deployment:
+
+1. Ensure GitHub Pages is configured to use GitHub Actions.
+2. Push to main with docs changes.
+3. Workflow in [.github/workflows/docs.yml](.github/workflows/docs.yml) builds and deploys automatically.
+
 ## Engineering Rules of Engagement
 
 1. Follow [CONTRIBUTING.md](CONTRIBUTING.md) for PR and review standards.
