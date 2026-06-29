@@ -11,6 +11,8 @@ Each file includes a full hiring packet:
 - Sourcing strategy and screening questions
 - 30/60/90-day outcomes
 
+For assignment tracking and weekly execution TODOs, use [../tasks/README.md](../tasks/README.md).
+
 ## Role Files
 
 - [vp-engineering.md](vp-engineering.md)
