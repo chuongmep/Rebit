@@ -5,6 +5,7 @@ This folder operationalizes role-based execution into team-level plans and track
 ## Structure
 
 - [teams/README.md](teams/README.md): all teams and team execution sheets
+- [tasks/README.md](tasks/README.md): per-role assignment TODO sheets
 - [boards/team-task-board.csv](boards/team-task-board.csv): role-task assignment tracker
 - [reports/weekly-blockers.md](reports/weekly-blockers.md): blocker escalation log
 - [reports/team-standup-template.md](reports/team-standup-template.md): weekly team update template

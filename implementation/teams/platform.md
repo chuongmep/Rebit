@@ -5,13 +5,13 @@ Deliver launch-critical outcomes for Platform and keep phase commitments on sche
 
 ## Team Roles and Assigned Task Sheets
 
-- [Director Platform and Reliability](../../hiring-system/tasks/director-platform-reliability-todo.md) (Priority: P0)
+- [Director Platform and Reliability](../tasks/director-platform-reliability-todo.md) (Priority: P0)
 
 ## Team TODO Workflow
 1. Assign owners in each linked task sheet.
 2. Set start and target completion dates for Phase A, B, and C.
 3. Update checkbox status weekly before review.
-4. Escalate blockers to implementation/reports/weekly-blockers.md.
+4. Escalate blockers to ../reports/weekly-blockers.md.
 
 ## Weekly Output
 - Completed tasks

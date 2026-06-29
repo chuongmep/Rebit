@@ -66,5 +66,5 @@ This package turns the master plan into an operating system your team can run im
 5. Run risk checks from 06_risk_register.md every week.
 6. Execute crate ownership and role tasks from 08_rust_architecture_and_role_tasks.md.
 7. Use role packs from roles/README.md for hiring kickoff and onboarding alignment.
-8. Assign execution ownership with per-role task sheets in tasks/README.md.
+8. Assign execution ownership with per-role task sheets in ../implementation/tasks/README.md.
 9. Manage team-level execution in ../implementation/README.md.

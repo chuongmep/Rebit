@@ -5,13 +5,13 @@ Deliver launch-critical outcomes for Security and keep phase commitments on sche
 
 ## Team Roles and Assigned Task Sheets
 
-- [Security Engineer AppSec](../../hiring-system/tasks/security-engineer-appsec-todo.md) (Priority: P1)
+- [Security Engineer AppSec](../tasks/security-engineer-appsec-todo.md) (Priority: P1)
 
 ## Team TODO Workflow
 1. Assign owners in each linked task sheet.
 2. Set start and target completion dates for Phase A, B, and C.
 3. Update checkbox status weekly before review.
-4. Escalate blockers to implementation/reports/weekly-blockers.md.
+4. Escalate blockers to ../reports/weekly-blockers.md.
 
 ## Weekly Output
 - Completed tasks

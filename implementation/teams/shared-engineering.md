@@ -5,13 +5,13 @@ Deliver launch-critical outcomes for Shared Engineering and keep phase commitmen
 
 ## Team Roles and Assigned Task Sheets
 
-- [Senior Rust Systems Engineer](../../hiring-system/tasks/senior-rust-systems-engineer-todo.md) (Priority: P0)
+- [Senior Rust Systems Engineer](../tasks/senior-rust-systems-engineer-todo.md) (Priority: P0)
 
 ## Team TODO Workflow
 1. Assign owners in each linked task sheet.
 2. Set start and target completion dates for Phase A, B, and C.
 3. Update checkbox status weekly before review.
-4. Escalate blockers to implementation/reports/weekly-blockers.md.
+4. Escalate blockers to ../reports/weekly-blockers.md.
 
 ## Weekly Output
 - Completed tasks

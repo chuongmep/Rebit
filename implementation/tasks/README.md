@@ -1,6 +1,6 @@
 # Rebit Task Assignment Packs
 
-This folder contains one task TODO file per role in [../roles](../roles).
+This folder contains one task TODO file per role in [../../hiring-system/roles](../../hiring-system/roles).
 Each task file is structured for assignment, tracking, and weekly execution.
 
 ## How to use
