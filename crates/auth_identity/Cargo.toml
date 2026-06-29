@@ -1,0 +1,8 @@
+[package]
+name = "auth_identity"
+version = "0.1.0"
+edition = "2024"
+license = "Proprietary"
+publish = false
+
+[dependencies]

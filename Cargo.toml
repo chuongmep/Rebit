@@ -1,0 +1,48 @@
+[workspace]
+resolver = "2"
+members = [
+  "apps/desktop",
+  "apps/cloud_api",
+  "crates/core_math",
+  "crates/geometry_kernel",
+  "crates/constraint_solver",
+  "crates/bim_model",
+  "crates/parametric_engine",
+  "crates/scene_graph",
+  "crates/rendering_engine",
+  "crates/gpu_backend",
+  "crates/ui_framework",
+  "crates/desktop_shell",
+  "crates/file_ifc",
+  "crates/file_dwg_bridge",
+  "crates/import_export_pipeline",
+  "crates/auth_identity",
+  "crates/cloud_project_service",
+  "crates/collaboration_service",
+  "crates/plugin_sdk",
+  "crates/ai_workflows",
+  "crates/perf_harness",
+  "crates/test_oracles",
+  "crates/telemetry",
+]
+
+[workspace.package]
+edition = "2024"
+license = "Proprietary"
+version = "0.1.0"
+publish = false
+
+[workspace.lints.rust]
+unsafe_code = "deny"
+missing_docs = "warn"
+
+[workspace.lints.clippy]
+pedantic = "warn"
+nursery = "warn"
+
+[profile.dev]
+opt-level = 1
+
+[profile.release]
+codegen-units = 1
+lto = "thin"

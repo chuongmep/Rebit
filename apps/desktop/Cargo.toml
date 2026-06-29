@@ -1,0 +1,14 @@
+[package]
+name = "rebit-desktop"
+version = "0.1.0"
+edition = "2024"
+license = "Proprietary"
+publish = false
+
+[dependencies]
+desktop_shell = { path = "../../crates/desktop_shell" }
+ui_framework = { path = "../../crates/ui_framework" }
+rendering_engine = { path = "../../crates/rendering_engine" }
+bim_model = { path = "../../crates/bim_model" }
+parametric_engine = { path = "../../crates/parametric_engine" }
+telemetry = { path = "../../crates/telemetry" }

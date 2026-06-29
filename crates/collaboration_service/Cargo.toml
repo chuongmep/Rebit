@@ -1,0 +1,8 @@
+[package]
+name = "collaboration_service"
+version = "0.1.0"
+edition = "2024"
+license = "Proprietary"
+publish = false
+
+[dependencies]

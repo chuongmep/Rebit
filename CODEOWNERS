@@ -1,0 +1,34 @@
+# Core architecture ownership
+/crates/core_math/ @rebit/geometry-kernel
+/crates/geometry_kernel/ @rebit/geometry-kernel
+/crates/constraint_solver/ @rebit/constraint-solver
+/crates/bim_model/ @rebit/bim-data-model
+/crates/parametric_engine/ @rebit/parametric-engine
+
+# Rendering and desktop
+/crates/scene_graph/ @rebit/rendering
+/crates/rendering_engine/ @rebit/rendering
+/crates/gpu_backend/ @rebit/gpu
+/crates/ui_framework/ @rebit/ui-framework
+/crates/desktop_shell/ @rebit/desktop-platform
+
+# Interop
+/crates/file_ifc/ @rebit/interop
+/crates/file_dwg_bridge/ @rebit/interop
+/crates/import_export_pipeline/ @rebit/interop
+
+# Cloud and collaboration
+/crates/auth_identity/ @rebit/cloud-auth
+/crates/cloud_project_service/ @rebit/cloud-services
+/crates/collaboration_service/ @rebit/collaboration
+
+# SDK and AI
+/crates/plugin_sdk/ @rebit/plugin-sdk
+/crates/ai_workflows/ @rebit/ai-features
+
+# Platform and quality
+/crates/perf_harness/ @rebit/performance
+/crates/test_oracles/ @rebit/qa-automation
+/crates/telemetry/ @rebit/platform
+/apps/ @rebit/platform
+/.github/workflows/ @rebit/platform

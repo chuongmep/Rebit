@@ -1,0 +1,12 @@
+[package]
+name = "rebit-cloud-api"
+version = "0.1.0"
+edition = "2024"
+license = "Proprietary"
+publish = false
+
+[dependencies]
+auth_identity = { path = "../../crates/auth_identity" }
+cloud_project_service = { path = "../../crates/cloud_project_service" }
+collaboration_service = { path = "../../crates/collaboration_service" }
+telemetry = { path = "../../crates/telemetry" }
