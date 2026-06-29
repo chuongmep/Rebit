@@ -16,7 +16,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: pages
+  group: docs-pages-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
@@ -48,6 +48,7 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
