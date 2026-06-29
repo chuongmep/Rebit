@@ -55,6 +55,7 @@ Rust monorepo structure is now initialized for parallel team contribution:
 ## Architecture and Role Ownership
 
 - Canonical architecture and role-task mapping: [hiring-system/08_rust_architecture_and_role_tasks.md](hiring-system/08_rust_architecture_and_role_tasks.md)
+- Role-by-role job descriptions and scope of work: [hiring-system/roles/README.md](hiring-system/roles/README.md)
 - Role priority matrix: [hiring-system/05_role_priority_matrix.md](hiring-system/05_role_priority_matrix.md)
 - Weekly execution cadence: [hiring-system/02_operating_cadence.md](hiring-system/02_operating_cadence.md)
 

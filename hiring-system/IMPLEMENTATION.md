@@ -65,3 +65,4 @@ This package turns the master plan into an operating system your team can run im
 4. Track in dashboards/hiring_dashboard_template.csv.
 5. Run risk checks from 06_risk_register.md every week.
 6. Execute crate ownership and role tasks from 08_rust_architecture_and_role_tasks.md.
+7. Use role packs from roles/README.md for hiring kickoff and onboarding alignment.
