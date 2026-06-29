@@ -1,5 +1,13 @@
 # Rebit
 
+![CI](https://img.shields.io/badge/CI-GitHub_Actions-2088FF?logo=githubactions&logoColor=white)
+![Rust](https://img.shields.io/badge/Rust-stable-000000?logo=rust&logoColor=white)
+![Workspace](https://img.shields.io/badge/Monorepo-Cargo_Workspace-5E81AC)
+![Architecture](https://img.shields.io/badge/Architecture-RFC%20%2B%20ADR-6A5ACD)
+![Docs](https://img.shields.io/badge/Docs-Structured-2E8B57)
+![Status](https://img.shields.io/badge/Status-Active_Development-orange)
+![License](https://img.shields.io/badge/License-Proprietary-lightgrey)
+
 Rebit is a next-generation BIM/CAD platform being built in Rust.
 
 This repository is set up as a contributor-ready monorepo so multiple engineering teams can work in parallel with clear ownership and quality gates.
