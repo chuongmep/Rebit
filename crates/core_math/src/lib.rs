@@ -24,7 +24,7 @@
 // ---------------------------------------------------------------------------
 
 mod scalar;
-pub use scalar::{Scalar, scalar, Tolerance};
+pub use scalar::{Scalar, Tolerance, scalar};
 
 mod point;
 pub use point::Point3D;

@@ -5,8 +5,8 @@
 //! In Phase A it only exports scaffolding types to unblock downstream modules
 //! that need to reference operation result types.
 
-use core_math::{Point3D, Tolerance, Vector3D};
 use crate::shapes::{Line, Plane};
+use core_math::{Point3D, Tolerance, Vector3D};
 
 // ---------------------------------------------------------------------------
 // Intersection result types
@@ -41,12 +41,10 @@ pub fn intersect_line_plane(line: &Line, plane: &Plane, tol: &Tolerance) -> Inte
         // Parallel — either disjoint or contained.
         return Intersection::None;
     }
-    let numerator = -(plane.normal.dot(&Vector3D::new(
-        line.origin.x,
-        line.origin.y,
-        line.origin.z,
-    ))
-    .value
+    let numerator = -(plane
+        .normal
+        .dot(&Vector3D::new(line.origin.x, line.origin.y, line.origin.z))
+        .value
         + plane.d.value);
     let t = numerator / denom.value;
     let point = Point3D::new(
@@ -75,10 +73,7 @@ mod tests {
         // Plane z = 0
         let plane = Plane::from_normal_and_point(Vector3D::Z, &Point3D::ORIGIN);
         // Line from (1,2,5) pointing down
-        let line = Line::new(
-            Point3D::new(1.0, 2.0, 5.0),
-            Vector3D::new(0.0, 0.0, -1.0),
-        );
+        let line = Line::new(Point3D::new(1.0, 2.0, 5.0), Vector3D::new(0.0, 0.0, -1.0));
         match intersect_line_plane(&line, &plane, &tol()) {
             Intersection::Point(p) => {
                 assert!(p.nearly_equal(&Point3D::new(1.0, 2.0, 0.0), &tol()));

@@ -1,6 +1,6 @@
 //! 3D vector (direction / displacement) type.
 
-use crate::{Float, Scalar, Tolerance, Point3D};
+use crate::{Float, Point3D, Scalar, Tolerance};
 
 /// A vector in 3D space representing a direction or displacement.
 ///

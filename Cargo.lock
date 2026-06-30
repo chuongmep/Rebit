@@ -25,6 +25,10 @@ version = "0.1.0"
 [[package]]
 name = "constraint_solver"
 version = "0.1.0"
+dependencies = [
+ "core_math",
+ "geometry_kernel",
+]
 
 [[package]]
 name = "core_math"

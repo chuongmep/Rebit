@@ -47,8 +47,7 @@ impl Interval {
     /// `true` when `value` lies within `[min, max]` (inclusive) under `tol`.
     #[inline]
     pub fn contains(&self, value: Scalar, tol: &Tolerance) -> bool {
-        value.value >= self.min.value - tol.absolute
-            && value.value <= self.max.value + tol.absolute
+        value.value >= self.min.value - tol.absolute && value.value <= self.max.value + tol.absolute
     }
 
     /// `true` when two intervals overlap under `tol`.

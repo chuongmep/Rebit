@@ -32,8 +32,7 @@ impl Line {
     pub fn closest_point(&self, point: &Point3D) -> Point3D {
         let v = Vector3D::between(&self.origin, point);
         let t = v.dot(&self.direction);
-        self.origin
-            + self.direction.scale(t)
+        self.origin + self.direction.scale(t)
     }
 
     /// Distance from this line to a point.
@@ -82,11 +81,7 @@ impl Plane {
     pub fn project_point(&self, point: &Point3D) -> Point3D {
         let dist = self.signed_distance(point);
         let offset = self.normal.scale(Scalar::new(-dist.value));
-        Point3D::new(
-            point.x + offset.x,
-            point.y + offset.y,
-            point.z + offset.z,
-        )
+        Point3D::new(point.x + offset.x, point.y + offset.y, point.z + offset.z)
     }
 
     /// `true` when the point lies on the plane within tolerance.
@@ -325,14 +320,14 @@ mod tests {
             Point3D::new(0.0, 5.0, -3.0),
         ];
         let bbox = BoundingBox::from_points(pts.into_iter()).unwrap();
-        assert!(bbox.min_corner().nearly_equal(
-            &Point3D::new(0.0, 0.0, -3.0),
-            &tol()
-        ));
-        assert!(bbox.max_corner().nearly_equal(
-            &Point3D::new(10.0, 5.0, 0.0),
-            &tol()
-        ));
+        assert!(
+            bbox.min_corner()
+                .nearly_equal(&Point3D::new(0.0, 0.0, -3.0), &tol())
+        );
+        assert!(
+            bbox.max_corner()
+                .nearly_equal(&Point3D::new(10.0, 5.0, 0.0), &tol())
+        );
     }
 
     #[test]
@@ -353,10 +348,8 @@ mod tests {
 
     #[test]
     fn bounding_boxes_overlap() {
-        let a = BoundingBox::from_corners(
-            &Point3D::new(0.0, 0.0, 0.0),
-            &Point3D::new(5.0, 5.0, 5.0),
-        );
+        let a =
+            BoundingBox::from_corners(&Point3D::new(0.0, 0.0, 0.0), &Point3D::new(5.0, 5.0, 5.0));
         let b = BoundingBox::from_corners(
             &Point3D::new(4.0, 4.0, 4.0),
             &Point3D::new(10.0, 10.0, 10.0),
@@ -376,13 +369,13 @@ mod tests {
             radius: scalar(2.0),
         };
         let bbox = s.bounding_box();
-        assert!(bbox.min_corner().nearly_equal(
-            &Point3D::new(-1.0, 0.0, 1.0),
-            &tol()
-        ));
-        assert!(bbox.max_corner().nearly_equal(
-            &Point3D::new(3.0, 4.0, 5.0),
-            &tol()
-        ));
+        assert!(
+            bbox.min_corner()
+                .nearly_equal(&Point3D::new(-1.0, 0.0, 1.0), &tol())
+        );
+        assert!(
+            bbox.max_corner()
+                .nearly_equal(&Point3D::new(3.0, 4.0, 5.0), &tol())
+        );
     }
 }

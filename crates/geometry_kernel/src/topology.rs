@@ -28,8 +28,8 @@
 //! geometric validity — callers should validate after construction using
 //! the query methods.
 
+use crate::shapes::{BoundingBox, Line, Plane};
 use core_math::{Point3D, Scalar, Tolerance, Vector3D};
-use crate::shapes::{Line, Plane, BoundingBox};
 
 // ---------------------------------------------------------------------------
 // Vertex
@@ -138,11 +138,7 @@ impl Loop {
         for i in 0..self.edges.len() {
             let curr = &self.edges[i];
             let next = &self.edges[(i + 1) % self.edges.len()];
-            if !curr
-                .end
-                .position
-                .nearly_equal(&next.start.position, tol)
-            {
+            if !curr.end.position.nearly_equal(&next.start.position, tol) {
                 return false;
             }
         }
@@ -390,12 +386,15 @@ mod tests {
     }
 
     fn make_quad(v0: Vertex, v1: Vertex, v2: Vertex, v3: Vertex) -> Loop {
-        Loop::new(0, vec![
-            Edge::new(0, v0.clone(), v1.clone()),
-            Edge::new(1, v1, v2.clone()),
-            Edge::new(2, v2, v3.clone()),
-            Edge::new(3, v3, v0), // close back to v0
-        ])
+        Loop::new(
+            0,
+            vec![
+                Edge::new(0, v0.clone(), v1.clone()),
+                Edge::new(1, v1, v2.clone()),
+                Edge::new(2, v2, v3.clone()),
+                Edge::new(3, v3, v0), // close back to v0
+            ],
+        )
     }
 
     #[test]
@@ -424,12 +423,15 @@ mod tests {
             .map(|(i, p)| Vertex::new(i as u64, *p))
             .collect();
         // Open: last edge does not return to first vertex.
-        let l = Loop::new(0, vec![
-            Edge::new(0, verts[0].clone(), verts[1].clone()),
-            Edge::new(1, verts[1].clone(), verts[2].clone()),
-            Edge::new(2, verts[2].clone(), verts[3].clone()),
-            // Missing closing edge
-        ]);
+        let l = Loop::new(
+            0,
+            vec![
+                Edge::new(0, verts[0].clone(), verts[1].clone()),
+                Edge::new(1, verts[1].clone(), verts[2].clone()),
+                Edge::new(2, verts[2].clone(), verts[3].clone()),
+                // Missing closing edge
+            ],
+        );
         assert!(!l.is_closed(&tol()));
     }
 
@@ -470,24 +472,66 @@ mod tests {
             .map(|(i, p)| Vertex::new(i as u64, *p))
             .collect();
         // Build 6 faces of a cube.
-        let bottom = Face::new(0, make_quad(
-            verts[0].clone(), verts[1].clone(), verts[2].clone(), verts[3].clone(),
-        ), vec![]);
-        let top = Face::new(1, make_quad(
-            verts[4].clone(), verts[5].clone(), verts[6].clone(), verts[7].clone(),
-        ), vec![]);
-        let front = Face::new(2, make_quad(
-            verts[0].clone(), verts[1].clone(), verts[5].clone(), verts[4].clone(),
-        ), vec![]);
-        let back = Face::new(3, make_quad(
-            verts[2].clone(), verts[3].clone(), verts[7].clone(), verts[6].clone(),
-        ), vec![]);
-        let left = Face::new(4, make_quad(
-            verts[0].clone(), verts[3].clone(), verts[7].clone(), verts[4].clone(),
-        ), vec![]);
-        let right = Face::new(5, make_quad(
-            verts[1].clone(), verts[2].clone(), verts[6].clone(), verts[5].clone(),
-        ), vec![]);
+        let bottom = Face::new(
+            0,
+            make_quad(
+                verts[0].clone(),
+                verts[1].clone(),
+                verts[2].clone(),
+                verts[3].clone(),
+            ),
+            vec![],
+        );
+        let top = Face::new(
+            1,
+            make_quad(
+                verts[4].clone(),
+                verts[5].clone(),
+                verts[6].clone(),
+                verts[7].clone(),
+            ),
+            vec![],
+        );
+        let front = Face::new(
+            2,
+            make_quad(
+                verts[0].clone(),
+                verts[1].clone(),
+                verts[5].clone(),
+                verts[4].clone(),
+            ),
+            vec![],
+        );
+        let back = Face::new(
+            3,
+            make_quad(
+                verts[2].clone(),
+                verts[3].clone(),
+                verts[7].clone(),
+                verts[6].clone(),
+            ),
+            vec![],
+        );
+        let left = Face::new(
+            4,
+            make_quad(
+                verts[0].clone(),
+                verts[3].clone(),
+                verts[7].clone(),
+                verts[4].clone(),
+            ),
+            vec![],
+        );
+        let right = Face::new(
+            5,
+            make_quad(
+                verts[1].clone(),
+                verts[2].clone(),
+                verts[6].clone(),
+                verts[5].clone(),
+            ),
+            vec![],
+        );
         let shell = Shell::new(0, vec![bottom, top, front, back, left, right]);
         let solid = Solid::new(0, shell);
         let bbox = solid.bounding_box();

@@ -79,7 +79,11 @@ impl Point3D {
     /// Build from a `[Float; 3]` array.
     #[inline]
     pub fn from_array(arr: [Float; 3]) -> Self {
-        Self::new(Scalar::new(arr[0]), Scalar::new(arr[1]), Scalar::new(arr[2]))
+        Self::new(
+            Scalar::new(arr[0]),
+            Scalar::new(arr[1]),
+            Scalar::new(arr[2]),
+        )
     }
 }
 

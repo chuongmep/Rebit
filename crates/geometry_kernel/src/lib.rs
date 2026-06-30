@@ -39,15 +39,15 @@
 // Re-export core_math for downstream convenience
 // ---------------------------------------------------------------------------
 
-pub use core_math::{scalar, Float, Matrix4x4, Point3D, Scalar, Tolerance, Vector3D};
+pub use core_math::{Float, Matrix4x4, Point3D, Scalar, Tolerance, Vector3D, scalar};
 
 // ---------------------------------------------------------------------------
 // Modules
 // ---------------------------------------------------------------------------
 
+pub mod ops;
 pub mod shapes;
 pub mod topology;
-pub mod ops;
 
 // ---------------------------------------------------------------------------
 // Kernel-wide configuration

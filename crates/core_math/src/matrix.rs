@@ -1,6 +1,6 @@
 //! 4×4 homogeneous transformation matrix.
 
-use crate::{Float, Scalar, Point3D, Vector3D};
+use crate::{Float, Point3D, Scalar, Vector3D};
 
 /// A 4×4 matrix in row-major storage for homogeneous transforms.
 ///
@@ -52,22 +52,11 @@ impl Matrix4x4 {
     /// Transform a point (treating the homogeneous w = 1).
     #[inline]
     pub fn transform_point(&self, p: &Point3D) -> Point3D {
-        let x = self.m[0] * p.x.value
-            + self.m[1] * p.y.value
-            + self.m[2] * p.z.value
-            + self.m[3];
-        let y = self.m[4] * p.x.value
-            + self.m[5] * p.y.value
-            + self.m[6] * p.z.value
-            + self.m[7];
-        let z = self.m[8] * p.x.value
-            + self.m[9] * p.y.value
-            + self.m[10] * p.z.value
-            + self.m[11];
-        let w = self.m[12] * p.x.value
-            + self.m[13] * p.y.value
-            + self.m[14] * p.z.value
-            + self.m[15];
+        let x = self.m[0] * p.x.value + self.m[1] * p.y.value + self.m[2] * p.z.value + self.m[3];
+        let y = self.m[4] * p.x.value + self.m[5] * p.y.value + self.m[6] * p.z.value + self.m[7];
+        let z = self.m[8] * p.x.value + self.m[9] * p.y.value + self.m[10] * p.z.value + self.m[11];
+        let w =
+            self.m[12] * p.x.value + self.m[13] * p.y.value + self.m[14] * p.z.value + self.m[15];
         debug_assert!(w.abs() > 1e-15, "degenerate homogeneous coordinate w = {w}");
         Point3D::new(Scalar::new(x / w), Scalar::new(y / w), Scalar::new(z / w))
     }
