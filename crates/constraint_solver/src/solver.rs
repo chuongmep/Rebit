@@ -272,6 +272,8 @@ fn relax_constraint(kind: &ConstraintKind, damping: Scalar) -> ConstraintKind {
                 ),
             }
         }
+        // Phase B constraint types — no-op relaxation (return clone).
+        _ => kind.clone(),
     }
 }
 

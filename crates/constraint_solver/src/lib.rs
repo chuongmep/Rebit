@@ -14,8 +14,10 @@
 //! |---|---|
 //! | [`variable`] | Degrees of freedom — numeric values with optional bounds |
 //! | [`graph`] | Bipartite constraint graph — variable & constraint nodes |
-//! | [`constraint`] | Constraint types (dimensional, geometric, coincident) |
-//! | [`solver`] | Deterministic iterative solver with convergence checks |
+//! | [`constraint`] | Constraint types (dimensional, geometric, angle, fixed) |
+//! | [`solver`] | Phase A: Gauss-Seidel relaxation solver |
+//! | [`newton`] | Phase B: Newton-Raphson solver for faster convergence |
+//! | [`sketch`] | Phase B: Sketch-level integration with point management |
 //!
 //! # Determinism guarantees
 //!
@@ -24,15 +26,11 @@
 //! 3. No floating-point comparisons outside of [`core_math::Tolerance`].
 //! 4. The solver stops at a fixed iteration cap regardless of convergence.
 //!
-//! # Phase A scope
+//! # Phase B additions
 //!
-//! Phase A delivers:
-//! - Variable system with scalar-valued degrees of freedom
-//! - Constraint graph with bipartite representation
-//! - Dimensional constraints: distance, horizontal distance, vertical distance
-//! - Geometric constraints: horizontal, vertical, coincident, collinear
-//!
-//! Full nonlinear solver and sketch-level integration are Phase B deliverables.
+//! - Newton-Raphson solver with finite-difference Jacobian approximation
+//! - Angle, Parallel, Perpendicular, EqualLength, FixedPoint constraints
+//! - Sketch-level integration with point management and re-solving
 
 #![forbid(unsafe_code)]
 #![warn(missing_docs)]
@@ -50,9 +48,7 @@ pub use geometry_kernel::Point3D;
 
 pub mod constraint;
 pub mod graph;
+pub mod newton;
+pub mod sketch;
 pub mod solver;
 pub mod variable;
-
-// ---------------------------------------------------------------------------
-// Placeholder — removed original stub
-// ---------------------------------------------------------------------------
