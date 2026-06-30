@@ -6,3 +6,4 @@ license = "Proprietary"
 publish = false
 
 [dependencies]
+geometry_kernel = { path = "../geometry_kernel" }

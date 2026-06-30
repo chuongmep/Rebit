@@ -3,13 +3,23 @@
 use geometry_kernel::Point3D;
 
 #[derive(Debug, Clone)]
-pub struct PluginManifest { pub name: String, pub version: String, pub author: String }
+pub struct PluginManifest {
+    pub name: String,
+    pub version: String,
+    pub author: String,
+}
 
 #[derive(Debug, Clone, Default)]
-pub struct PluginContext { pub api_version: u32 }
+pub struct PluginContext {
+    pub api_version: u32,
+}
 impl PluginContext {
-    pub fn new() -> Self { Self { api_version: 1 } }
-    pub fn create_point(&self, x: f64, y: f64, z: f64) -> Point3D { Point3D::new(x, y, z) }
+    pub fn new() -> Self {
+        Self { api_version: 1 }
+    }
+    pub fn create_point(&self, x: f64, y: f64, z: f64) -> Point3D {
+        Point3D::new(x, y, z)
+    }
 }
 
 #[cfg(test)]
