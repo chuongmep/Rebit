@@ -50,15 +50,15 @@ impl VariableValue {
     /// Clamp the value to `[lower, upper]` if bounds are set.
     #[inline]
     pub fn clamp(&mut self) {
-        if let Some(lo) = self.lower {
-            if self.value.value < lo.value {
-                self.value = lo;
-            }
+        if let Some(lo) = self.lower
+            && self.value.value < lo.value
+        {
+            self.value = lo;
         }
-        if let Some(hi) = self.upper {
-            if self.value.value > hi.value {
-                self.value = hi;
-            }
+        if let Some(hi) = self.upper
+            && self.value.value > hi.value
+        {
+            self.value = hi;
         }
     }
 
@@ -72,13 +72,12 @@ impl VariableValue {
     /// `true` when the value is at or beyond its lower bound.
     #[inline]
     pub fn at_lower(&self) -> bool {
-        self.lower.map_or(false, |lo| self.value.value <= lo.value)
+        self.lower.is_some_and(|lo| self.value.value <= lo.value)
     }
-
     /// `true` when the value is at or beyond its upper bound.
     #[inline]
     pub fn at_upper(&self) -> bool {
-        self.upper.map_or(false, |hi| self.value.value >= hi.value)
+        self.upper.is_some_and(|hi| self.value.value >= hi.value)
     }
 }
 

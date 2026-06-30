@@ -213,10 +213,10 @@ impl Face {
             let ab = Vector3D::between(a, b);
             let ac = Vector3D::between(a, c);
             let normal = ab.cross(&ac);
-            if normal.length_squared().value > 0.0 {
-                if let Some(unit_normal) = normal.normalize() {
-                    return Plane::from_normal_and_point(unit_normal, a);
-                }
+            if normal.length_squared().value > 0.0
+                && let Some(unit_normal) = normal.normalize()
+            {
+                return Plane::from_normal_and_point(unit_normal, a);
             }
         }
 
