@@ -1,8 +1,18 @@
-//! gpu_backend crate.
-//! TODO: define public interfaces and RFC references.
-
+//! gpu_backend — GPU abstraction layer for Vulkan/Metal compute and draw.
 #![forbid(unsafe_code)]
+/// GPU buffer handle (opaque in Phase A).
+#[derive(Debug, Clone, Copy)]
+pub struct GpuBufferId(pub u64);
+/// GPU backend initialization stub.
+pub fn init() -> Result<(), &'static str> {
+    Ok(())
+}
 
-pub fn crate_ready() -> &'static str {
-    "gpu_backend ready"
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn init_succeeds() {
+        assert!(init().is_ok());
+    }
 }

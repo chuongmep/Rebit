@@ -1,8 +1,18 @@
-//! file_dwg_bridge crate.
-//! TODO: define public interfaces and RFC references.
-
+//! file_dwg_bridge — DWG file import/export bridge.
 #![forbid(unsafe_code)]
+#[derive(Debug, Clone)]
+pub struct DwgImportResult {
+    pub entity_count: usize,
+}
+pub fn import_dwg(_path: &str) -> Result<DwgImportResult, &'static str> {
+    Ok(DwgImportResult { entity_count: 0 })
+}
 
-pub fn crate_ready() -> &'static str {
-    "file_dwg_bridge ready"
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn dwg_import_stub() {
+        assert!(import_dwg("t.dwg").is_ok());
+    }
 }

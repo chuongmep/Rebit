@@ -6,3 +6,4 @@ license = "Proprietary"
 publish = false
 
 [dependencies]
+file_ifc = { path = "../file_ifc" }

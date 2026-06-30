@@ -6,3 +6,4 @@ license = "Proprietary"
 publish = false
 
 [dependencies]
+bim_model = { path = "../bim_model" }

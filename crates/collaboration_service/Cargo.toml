@@ -6,3 +6,4 @@ license = "Proprietary"
 publish = false
 
 [dependencies]
+cloud_project_service = { path = "../cloud_project_service" }

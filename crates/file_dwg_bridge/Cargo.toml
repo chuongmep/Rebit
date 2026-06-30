@@ -6,3 +6,4 @@ license = "Proprietary"
 publish = false
 
 [dependencies]
+core_math = { path = "../core_math" }

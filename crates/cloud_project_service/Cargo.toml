@@ -6,3 +6,4 @@ license = "Proprietary"
 publish = false
 
 [dependencies]
+auth_identity = { path = "../auth_identity" }
