@@ -45,6 +45,9 @@ version = "0.1.0"
 [[package]]
 name = "geometry_kernel"
 version = "0.1.0"
+dependencies = [
+ "core_math",
+]
 
 [[package]]
 name = "gpu_backend"
