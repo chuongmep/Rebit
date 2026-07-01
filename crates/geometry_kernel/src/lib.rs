@@ -45,8 +45,11 @@ pub use core_math::{Float, Matrix4x4, Point3D, Scalar, Tolerance, Vector3D, scal
 // Modules
 // ---------------------------------------------------------------------------
 
+pub mod curves;
 pub mod ops;
 pub mod shapes;
+pub mod surfaces;
+pub mod tessellation;
 pub mod topology;
 
 // ---------------------------------------------------------------------------
