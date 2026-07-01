@@ -7,4 +7,5 @@ publish = false
 
 [dependencies]
 core_math = { path = "../core_math" }
+geometry_kernel = { path = "../geometry_kernel" }
 scene_graph = { path = "../scene_graph" }

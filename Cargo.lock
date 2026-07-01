@@ -138,6 +138,7 @@ name = "rendering_engine"
 version = "0.1.0"
 dependencies = [
  "core_math",
+ "geometry_kernel",
  "scene_graph",
 ]
 

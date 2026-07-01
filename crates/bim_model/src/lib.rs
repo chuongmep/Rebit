@@ -9,39 +9,22 @@
 //! | Module | Responsibility |
 //! |---|---|
 //! | [`entity`] | Core BIM entity types, property system, entity graph |
+//! | [`relationship`] | Phase B: entity dependency/connection graph |
 //! | [`transaction`] | Change tracking, undo/redo, atomic commits |
 //! | [`schema`] | Schema definition, versioning, migration stubs |
 //!
-//! # Design principles
+//! # Phase B additions
 //!
-//! 1. **Entities are value types with unique IDs.** They carry geometry
-//!    (via [`geometry_kernel::Solid`]) and properties.
-//! 2. **Transactions are atomic.** Every mutation goes through a
-//!    transaction context that can be committed or rolled back.
-//! 3. **Schema is versioned.** Future-proof metadata enables model
-//!    migration between versions.
-//!
-//! # Phase A scope
-//!
-//! - Core entity types: Wall, Slab, Beam, Column, Door, Window
-//! - Property system: key-value metadata on every entity
-//! - Transaction model: commit/rollback with change snapshots
-//! - Schema definitions with version identifiers
+//! - `RelationshipGraph` with `ConnectedTo`, `Contains`, `Supports`, `Hosts`
+//! - Entity neighbor queries, outgoing/incoming edge traversal
 
 #![forbid(unsafe_code)]
 #![warn(missing_docs)]
 
-// ---------------------------------------------------------------------------
-// Re-exports
-// ---------------------------------------------------------------------------
-
 pub use core_math::{Scalar, Tolerance, scalar};
 pub use geometry_kernel::{Point3D, Vector3D, shapes::BoundingBox, topology::Solid};
 
-// ---------------------------------------------------------------------------
-// Modules
-// ---------------------------------------------------------------------------
-
 pub mod entity;
+pub mod relationship;
 pub mod schema;
 pub mod transaction;
