@@ -7,6 +7,7 @@ name = "ai_workflows"
 version = "0.1.0"
 dependencies = [
  "bim_model",
+ "geometry_kernel",
 ]
 
 [[package]]

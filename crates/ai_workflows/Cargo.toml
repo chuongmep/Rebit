@@ -7,3 +7,6 @@ publish = false
 
 [dependencies]
 bim_model = { path = "../bim_model" }
+
+[dev-dependencies]
+geometry_kernel = { path = "../geometry_kernel" }
