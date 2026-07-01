@@ -51,4 +51,5 @@ pub mod graph;
 pub mod newton;
 pub mod sketch;
 pub mod solver;
+pub mod system;
 pub mod variable;
